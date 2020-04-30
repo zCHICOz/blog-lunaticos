@@ -1,0 +1,94 @@
+header#new {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 680px;
+    margin: 50px auto 20px;
+}
+
+header#new a {
+    background: #272727;
+    padding: 8px 18px 8px;
+    border-radius: 7px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background 0.3s ease-in;
+}
+header#new a:hover {
+    background: #8247A1;
+}
+
+form#new-post {
+    background-color: #fff;
+    width: 100%;
+    max-width: 680px;
+    margin: 0px auto 0px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+form#new-post input {
+    margin-bottom: 12px;
+}
+
+form#new-post .alert {
+    text-align: center;
+    color: #ff0000;
+    font-size: 15px;
+}
+
+form#new-post label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+form#new-post .lastLabel {
+    margin-top: 20px;
+}
+
+form#new-post progress {
+    margin-bottom: 40px;
+}
+
+form#new-post img {
+    width: 210px;
+    height: 120px;
+    margin-bottom: 40px;
+}
+
+form#new-post input[type=text] {
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #DDD;
+    padding: 0 20px;
+}
+
+form#new-post textarea{
+    height: 80px;
+    border-radius: 7px;
+    border: 1px solid #DDD;
+    padding: 0 20px;
+    padding-top: 10px;
+}
+
+form#new-post .cadastrar{
+    padding: 16px;
+    border-radius: 7px;
+    border: 0px;
+    color: #fff;
+    background-color: #272727;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease-in;
+}
+
+form#new-post button:hover {
+    background-color: #8247A1;
+}

@@ -1,0 +1,71 @@
+section#post {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+section#post article{
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px -1px #272727;
+  transition: all 0.3s ease-in;
+}
+
+section#post article:hover {
+  box-shadow: 1px 1px 10px -0px #272727;
+}
+
+section#post article:first-child {
+  margin-top: 60px;
+}
+
+section#post article:last-child {
+  margin-bottom: 60px;
+}
+
+section#post article header {
+  padding: 30px 50px;
+  display: flex;
+  align-items: center;
+}
+
+section#post article header .title{
+  display: flex;
+  flex-direction: column;
+}
+
+section#post article header strong {
+  font-size: 1.7em;
+}
+
+section#post article header span {
+  font-size: 1.15em;
+  padding-top: 8px;
+}
+
+section#post article > img {
+  width: 100%;
+}
+
+section#post article main p{
+  font-size: 1.15em;
+  margin-top: 0.5%;
+  margin-left: 40px;
+  word-wrap: break-word;
+}
+
+section#post article main p:first-child {
+  margin-top: 2%;
+}
+
+section#post article main p:last-child {
+  margin-bottom: 2%;
+}
+
+section#post article main span{
+  margin-left: 90px;
+  font-size: 1.07em;
+}
