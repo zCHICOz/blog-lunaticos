@@ -1,85 +1,161 @@
-header#main-header {
-    width: 100%;
-    background:#8247A1;
-    height: 125px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+.cabecalho {
+    background: #8247A1;
 }
 
-header#main-header .header-content {
-    width: 100%;
-    max-width: 930px;
-    margin: 0 auto;
-    padding: 0 30px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+@media screen and (max-width: 2560px) {
+.menu {
+margin-left: 15%;
 }
 
-header#main-header .header-content .logo {
-    display: flex;
-    align-items: center;
-    width: 100%;
+.item {
+font-size: 1.65em;
+margin-right: 20px;
+font-weight: 500;
+border-bottom: 2px solid transparent;
+transition: all 0.2s ease-in-out;
+}
+.item:hover {
+opacity: 0.6;
 }
 
-header#main-header .header-content .logo img {
-    width: 100px;
+.logo {
+width: 110px;
 }
 
-header#main-header .header-content .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 2.4em;
-    font-weight: 600;
-    margin-right: 4%;
+.buttons button{
+font-size: 1.4em;
+transition: all 0.4s ease-in-out;
 }
 
-header#main-header .header-content .logo hr {
-    padding: 0.5px;
-    background-color: #fff;
+.buttons button:hover {
+font-size: 1.45em;
+}
 }
 
-header#main-header .header-content .info {
-    display: flex;
-    align-items: center;
-    width: 100%;
+@media screen and (max-width: 1440px) {
+.menu {
+margin-left: 7%;
+}
+.item {
+font-size: 1.48em;
+margin-right: 20px;
+transition: all 0.7s ease-in-out;
+}
+.item:hover {
+opacity: 0.6;
+}
+
+.logo {
+width: 105px;
+}
+
+.buttons button{
+font-size: 1.3em;
+transition: all 0.4s ease-in-out;
+}
+
+.buttons button:hover {
+font-size: 1.35em;
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+.menu {
     margin-left: -7%;
 }
 
-header#main-header .header-content .info a {
-    font-size: 1.75em;
-    font-weight: 400;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 30px;
-    border-bottom: 1.5px solid transparent;
-    transition: all 0.4s ease-in-out;
+.item {
+    font-size: 1.1em;
+    margin-right: 6px;
+}
+.title {
+    font-size: 1.8em;
+    margin-left: -20%;
+}
+.logo {
+    width: 90px;
+    margin-left: -55%;
+}
+.buttons {
+    margin-right: -3%;
+}
+.buttons button {
+    font-size: 1.1em;
+}
 }
 
-header#main-header .header-content .info a:hover {
-    border-bottom: 1.5px solid #fff;
+
+@media screen and (max-width: 768px) {
+.menu {
+    padding-top: 8%;
+}
+.title {
+    font-size: 2.7em;
+    font-weight: 700;
+}
+.logo {
+    width: 100px;
 }
 
-header#main-header .header-content .info a:last-child {
-    margin-right: 0px;
-}
-
-header#main-header .header-content .login {
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
+.item {
+    width: 80%;
+    font-size: 2em;
+    margin-top: 8px;
+    background-color: #222;
+    box-shadow: 2px 2px 6px -1px #000;
+    margin-bottom: 1%;
+    margin-left: 13%;
+    text-align: center;
     border-radius: 6px;
-    font-size: 1.5em;
-    transition: all 0.3s ease-in;
-    box-shadow: 1px 1px 6px -1px #272727;
+}
+.buttons {
+    padding-top: 8%;
+    padding-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header#main-header .header-content .login:hover {
-    background-color: #272727;
-    box-shadow: 1px 1px 8px 0px #272727;
+.buttons button {
+    font-size: 1.7em;
 }
+}
+
+@media screen and (max-width: 767px) {
+    .title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+.title {
+display: none;
+}
+.menu {
+padding-top: 8%;
+}
+
+.item {
+font-size: 1.7em;
+margin-top: 8px;
+margin-bottom: 2%;
+background-color: #222;
+box-shadow: 2px 2px 6px -1px #000;
+text-align: center;
+border-radius: 6px;
+}
+.buttons {
+padding-top: 12%;
+padding-bottom: 5%;
+margin-left: 15%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.buttons button {
+font-size: 1.3em;
+}
+}
+

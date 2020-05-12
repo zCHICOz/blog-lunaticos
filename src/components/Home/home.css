@@ -1,71 +1,201 @@
 section#post {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 30px;
+  background-color: #F2D9FF;
 }
 
-section#post article{
-  background: #fff;
-  border: 1px solid #ddd;
-  margin-bottom: 30px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 6px -1px #272727;
-  transition: all 0.3s ease-in;
+section#post article {
+  background: #333;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px 1px #000;
+  transition: 0.2s ease-in-out;
 }
 
 section#post article:hover {
-  box-shadow: 1px 1px 10px -0px #272727;
+  box-shadow: 2px 2px 8px 2px #000;
 }
 
-section#post article:first-child {
-  margin-top: 60px;
-}
-
-section#post article:last-child {
-  margin-bottom: 60px;
-}
-
-section#post article header {
-  padding: 30px 50px;
+@media (max-width: 2560px) {
+section#post {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  
 }
 
-section#post article header .title{
+section#post article{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  padding-top: 1%;
+}
+
+section#post article .titles {
   display: flex;
   flex-direction: column;
 }
 
-section#post article header strong {
-  font-size: 1.7em;
+section#post article .img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-section#post article header span {
-  font-size: 1.15em;
-  padding-top: 8px;
+section#post article strong {
+  font-size: 3.2em;
+  padding-bottom: 2.5%;
 }
 
-section#post article > img {
-  width: 100%;
+section#post article span {
+  font-size: 1.2em;
+  padding-bottom: 8%;
 }
 
-section#post article main p{
-  font-size: 1.15em;
-  margin-top: 0.5%;
-  margin-left: 40px;
-  word-wrap: break-word;
+section#post article .img p {
+  margin-bottom: 3%;
+  font-size: 1.2em;
 }
 
-section#post article main p:first-child {
-  margin-top: 2%;
+section#post article .img img {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  padding-bottom: 8%;
+}
 }
 
-section#post article main p:last-child {
-  margin-bottom: 2%;
+
+
+
+@media (max-width: 1024px) {
+section#post {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
-section#post article main span{
-  margin-left: 90px;
-  font-size: 1.07em;
+section#post article{
+display: flex;
+flex-direction: column;
+margin-top: 5%;
+margin-bottom: 5%;
+padding-top: 3%;
+}
+
+section#post article .titles {
+display: flex;
+flex-direction: column;
+}
+
+section#post article .img {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+section#post article strong {
+font-size: 2.8em;
+padding-bottom: 5%;
+}
+
+section#post article span {
+font-size: 1.05em;
+padding-bottom: 10%;
+}
+
+section#post article .img p {
+margin-bottom: 3%;
+font-size: 1.28em;
+}
+
+section#post article .img img {
+width: 400px;
+height: 400px;
+padding-bottom: 8%;
+}
+}
+
+@media (max-width: 768px) {
+section#post article{
+display: flex;
+flex-direction: column;
+margin-top: 5%;
+margin-bottom: 5%;
+padding-top: 3%;
+}
+
+section#post article .titles {
+display: flex;
+flex-direction: column;
+}
+
+section#post article .img {
+display: flex;
+flex-direction: column;
+}
+
+section#post article strong {
+font-size: 2.3em;
+padding-bottom: 5%;
+}
+
+section#post article span {
+font-size: 1em;
+padding-bottom: 10%;
+}
+
+section#post article .img p {
+margin-bottom: 3%;
+font-size: 1.2em;
+}
+
+section#post article .img img {
+border-radius: 10%;
+padding-bottom: 8%;
+}
+}
+
+
+@media (max-width: 425px) {
+section#post article{
+display: flex;
+flex-direction: column;
+margin-top: 5%;
+margin-bottom: 5%;
+padding-top: 3%;
+}
+
+section#post article .titles {
+display: flex;
+flex-direction: column;
+}
+
+section#post article .img {
+display: flex;
+flex-direction: column;
+}
+
+section#post article strong {
+font-size: 1.5em;
+padding-bottom: 5%;
+}
+
+section#post article span {
+font-size: 0.9em;
+padding-bottom: 10%;
+}
+
+section#post article .img p {
+margin-bottom: 3%;
+font-size: 1em;
+}
+
+section#post article .img img {
+width: 260px;
+height: 260px;
+margin-bottom: 10%;
+margin-top: 12%;
+}
 }

@@ -2,29 +2,28 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import firebase from './firebase';
 
-import Home from './components/Home';
 import Header from './components/Header';
+
+import Home from './components/Home';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Register from './components/Register';
 import New from './components/New';
 
+import Footer from './components/Footer'
+
 import './global.css';
 
-
 class App extends Component {
-
   state = {
     firebaseinitialized: false
   };
-
   componentDidMount() {
     firebase.isInitialized().then(resultado => {
       // Devolve o usuario
       this.setState({ firebaseinitialized: resultado });
     })
   }
-
   render() {
     return this.state.firebaseinitialized !== false ?(
       <BrowserRouter>
@@ -36,11 +35,11 @@ class App extends Component {
           <Route exact path="/register" component={Register} />
           <Route exact path="/dashboard/new" component={New} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     ) : (
       <h1>Carregando...</h1>
     );
   }
 }
-
 export default App;

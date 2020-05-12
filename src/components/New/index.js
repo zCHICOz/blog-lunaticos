@@ -17,13 +17,17 @@ class New extends Component {
 		super(props);
 		this.state = {
 			titulo: '',
-			poema: [],
+      poema: [],
+      imagem: null,
+			url: '',
 			integrante: '',
 			autorPoema: '',
 			alert: ''
 		};
 
-		this.cadastrar = this.cadastrar.bind(this);
+    this.cadastrar = this.cadastrar.bind(this);
+    this.handleFile = this.handleFile.bind(this);
+		this.handleUpload = this.handleUpload.bind(this);
 	}
 
 	async componentDidMount() {
@@ -36,16 +40,21 @@ class New extends Component {
 	cadastrar = async (e) =>{
 		e.preventDefault();
 
-		if(this.state.titulo !== '' 
-			&& this.state.poema !== []
-			&& this.state.autorPoema !== '' ){
+    if(this.state.titulo !== ''
+      && this.state.poema !== []
+      && this.state.imagem !== '' 
+      && this.state.autorPoema !== ''
+      && this.state.imagem !== null
+      && this.state.url !=='' 
+      ){
 
 			let posts = firebase.app.ref('posts');
 			let chave = posts.push().key;
 
 			await posts.child(chave).set({
 				titulo: this.state.titulo,
-				poema: this.state.poema,
+        poema: this.state.poema,
+        imagem: this.state.url,
 				autorPoema: this.state.autorPoema,
 				integrante: localStorage.nome
 			});
@@ -55,7 +64,53 @@ class New extends Component {
 		else {
 			this.setState({ alert: 'Preencha todos os campos '})
 		}
+  }
+
+  handleFile = async (e) =>{
+
+		if(e.target.files[0]) {
+			
+			const image = e.target.files[0];
+
+			if(image.type === 'image/png' || image.type === 'image/jpeg' || image.type === 'image/jpg') {
+				await this.setState({ imagem: image});
+				this.handleUpload();
+			} 
+			else {
+				alert('Envie uma imagem do tipo PNG ou JPG!');
+				this.setState({ imagem: null });
+				return null;
+			}
+		}
+  }
+
+
+  handleUpload = async () => {
+		const { imagem } = this.state;
+		const currentUid = firebase.getCurrentUid();
+
+		const uploadTasks = firebase.storage.ref(`images/${currentUid}/${imagem.name}`).put(imagem);
+
+		await uploadTasks.on('state_changed', 
+		(snapshot) => {
+			// progress
+			const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+			this.setState({ progress })
+		},
+		(error) => {
+			// error
+			console.log('Error imagem: ' + error);
+		},
+		() => {
+			// sucess
+			firebase.storage.ref(`images/${currentUid}`)
+			.child(imagem.name).getDownloadURL()
+			.then(url => {
+				this.setState({ url: url })
+			})
+		})
 	}
+
 
 	render() {
 		return(
@@ -66,6 +121,16 @@ class New extends Component {
 
 				<form onSubmit={this.cadastrar} id="new-post">
 					<span className="alert">{this.state.alert} </span>
+
+				<input type="file"
+						onChange={this.handleFile}
+					/><br/>
+					{this.state.url !== '' ?
+						<img src={this.state.url} width="250" height="150" alt="Capa do post" />
+					: 
+					<progress value={this.state.progress} max="100" />
+					}
+
 					
 					<label>Título:</label><br/>
 					<input type="text" placeholder="Título do poema!" value={this.state.titulo}  autoFocus

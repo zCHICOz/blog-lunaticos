@@ -21,7 +21,7 @@ class Home extends Component {
         state.posts.push({
           key: childItem.key,
           titulo: childItem.val().titulo,
-          // imagem: childItem.val().imagem,
+          imagem: childItem.val().imagem,
           poema: childItem.val().poema,
           integrante: childItem.val().integrante,
           autorPoema: childItem.val().autorPoema
@@ -34,22 +34,24 @@ class Home extends Component {
 
   render() {
     return(
-      <section id="post">
+      <section id="post" className="container-fluid">
 
         {this.state.posts.map((post) => {
           return(
 
-            <article key={post.key}>
+            <article key={post.key} className="col-12 col-lg-10 mt-5 mb-5">
               <header>
-                <div className="title">
+                <div className="titles">
                   <strong>{post.titulo}</strong>
                   <span>Publicado por: {post.integrante}</span>
                 </div>
               </header>
 
               <main>
-                <p>{ReactHtmlParser(post.poema)}</p>
-                <span>- {post.autorPoema}</span>
+                <div className="img">
+                <p>{ReactHtmlParser(post.poema)} - {post.autorPoema}</p>
+                <img src={post.imagem} className=".rounded-circle" width="20%" alt="Capa do post" />
+                </div>
               </main>
             </article>
 

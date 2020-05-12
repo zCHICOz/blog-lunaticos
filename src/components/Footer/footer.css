@@ -1,0 +1,145 @@
+.footer {
+    background: #8247A1;
+    color: #fff;
+}
+
+@media screen and (max-width: 2560px) {
+.footer {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 1.1em;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.social-icons {
+    padding-top: 2%;
+}
+
+.footer .icon {
+    font-size: 3.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .icon:hover {
+    opacity: 0.7;
+}     
+}
+
+@media screen and (max-width: 1440px) {
+.footer {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 1.1em;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.social-icons {
+    padding-top: 2%;
+}
+
+.footer .icon {
+    font-size: 3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .icon:hover {
+    opacity: 0.7;
+}   
+}
+
+@media screen and (max-width: 1024px) {
+.footer {
+    min-height: 10vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 1em;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.social-icons {
+    padding-top: 2%;
+}
+
+.footer .icon {
+    font-size: 2.8em;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .icon:hover {
+    opacity: 0.7;
+}
+}
+
+@media screen and (max-width: 768px) {
+.footer {
+    min-height: 10vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.social-icons {
+    padding-top: 2%;
+}
+
+.footer .icon {
+    font-size: 2.5em;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .icon:hover {
+    opacity: 0.7;
+}
+}
+
+@media screen and (max-width: 425px) {
+.footer {
+    min-height: 10vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.footer .icon {
+    font-size: 2.3em;
+    transition: all 0.3s ease-in-out;
+}
+.footer .icon:hover {
+    opacity: 0.7;
+}
+}
